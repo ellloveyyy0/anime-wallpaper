@@ -410,7 +410,8 @@ function loadWallpapers() {
   "https://i.imgur.com/w7szy3Y.jpeg",
   "https://i.imgur.com/dpEv5kK.jpeg",
   "https://i.imgur.com/NeVBdjB.jpeg",
-  "https://i.imgur.com/Ui4cXQ3.jpeg"
+  "https://i.imgur.com/Ui4cXQ3.jpeg",
+  "https://d.uguu.se/wsTHyHKA.jpg"
 ];
 
 // Menggunakan loop untuk memasukkan gambar sesuai URL yang berbeda
@@ -519,6 +520,7 @@ loadWallpapers();
   
   <div id="elaina-credit">﹄𝑪𝒊𝒓𝒄𝒍𝒆 𝑼𝒏𝒊𝒐𝒏 𝑬𝒍𝒂𝒊𝒏𝒂™</div>
   <div class="request-text">request +62 877 1034 8394</div>
+  <div id="anime-wallpaper-title">Anime Wallpaper</div>
 
 <style>
   #elaina-credit {
@@ -551,8 +553,69 @@ loadWallpapers();
   pointer-events: none;
   user-select: none;
 }
-</style>
 
+#anime-wallpaper-title {
+  position: fixed;
+  top: 20px; /* Ubah ini kalau mau pindahkan tempat */
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 32px;
+  font-weight: 600; /* Sedikit tebal */
+  background: linear-gradient(to right, #ff3c9e, #b96eff); /* Merah campur ungu lavender */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow:
+    0 0 2px white, /* Stoke putih tipis */
+    0 0 8px rgba(255,255,255,0.3); /* Sedikit bersinar */
+  animation: float 3s ease-in-out infinite;
+  z-index: 999; /* Lapisan paling atas */
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Animasi mengambang */
+@keyframes float {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0px);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-8px);
+  }
+}
+
+#anime-wallpaper-title {
+  position: fixed;
+  top: 30px; /* Atur posisi dari atas */
+  left: 50%; /* Pusat secara horizontal */
+  transform: translateX(-50%); /* Biar benar-benar di tengah */
+  font-family: 'Georgia', serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #ff4ec4; /* Warna utama: merah campur lavender */
+  text-shadow:
+    1px 1px 1px white,     /* Stroke putih tipis */
+    0 0 5px rgba(255,255,255,0.6); /* Efek bersinar putih */
+  z-index: 999; /* Lapisan paling atas kecuali kategori */
+  animation: floatText 3s ease-in-out infinite;
+  white-space: nowrap; /* Supaya tetap satu baris */
+}
+
+/* Animasi mengambang */
+@keyframes floatText {
+  0% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-5px); }
+  100% { transform: translateX(-50%) translateY(0); }
+}
+</style>
+<script>
+  const animeTitle = document.getElementById("anime-wallpaper-title");
+  document.querySelectorAll(".kategori-panel").forEach(panel => {
+    panel.addEventListener("click", () => {
+      animeTitle.style.display = "none";
+    });
+  });
+</script>
 <script>
   const creditText = document.getElementById("elaina-credit");
 
@@ -563,4 +626,37 @@ loadWallpapers();
     });
   });
 </script>
-matamata
+
+<!-- report -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Anime Wallpaper</title>
+  <style>
+    /* Tempelkan CSS di sini */
+    #report-bug-link {
+      position: fixed;
+      top: -2px;
+      right: 1px;
+      z-index: 5;
+    }
+
+    #report-bug-logo {
+      width: 140px;
+      height: auto;
+      cursor: pointer;
+      pointer-events: auto;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Isi web kamu di sini -->
+
+  <!-- Logo report bug -->
+  <a href="https://wa.me/6287710348394" target="_blank" id="report-bug-link">
+    <img src="https://h.uguu.se/xqRgyehY.png" alt="Report Bug" id="report-bug-logo">
+  </a>
+</body>
+</html>
