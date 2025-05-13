@@ -36,51 +36,6 @@
 
 
 <!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Logo The Journey of Elaina</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #0e0e2c;
-      height: 100vh;
-    }
-
-    .logo-container {
-      position: absolute;
-      top: 90px;
-      left: 30%;
-      transform: translateX(-50%);
-      animation: fadeInOut 8s ease-in-out infinite;
-    }
-
-    .logo-container img {
-      width: 250px;
-      max-width: 80%;
-      height: auto;
-    }
-
-    @keyframes fadeInOut {
-      0%, 100% { opacity: 0.4; }
-      50% { opacity: 1; }
-    }
-  </style>
-</head>
-<body>
-  <div class="logo-container">
-    <img src="https://i.imgur.com/lMgdMoL.png" alt="The Journey of Elaina Logo">
-  </div>
-</body>
-</html>
-
-
-
-
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -252,188 +207,6 @@
     }
 
     setInterval(createStar, 3000);
-  </script>
-</body>
-</html>
-
-
-<!-- kategori 1 elaina -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>The Journey of Elaina</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #2b2b64;
-      overflow: hidden;
-    }
-
-    /* Tombol kategori 1 */
-    .category-btn {
-      position: fixed;
-      top: 160px;
-      left: 38px;
-      width: 160px;
-      height: 120px;
-      background-image: url('https://h.uguu.se/tpsOYOJi.png');
-      background-size: cover;
-      background-position: center;
-      border: 3px solid black;
-      border-radius: 12px;
-      box-shadow: 3px 3px 6px rgba(0,0,0,0.5);
-      cursor: pointer;
-      z-index: 100;
-    }
-
-    /* Panel kategori 1 */
-    .category-panel {
-      position: fixed;
-      top: 120px !important; /* Supaya gak kena logo */
-      right: -100%;
-      width: 80%;
-      height: calc(100% - 100px);
-      background: linear-gradient(to left, #a080f3, #ffffff);
-      border-left: 3px solid black;
-      transition: right 0.4s ease;
-      padding: 20px;
-      box-sizing: border-box;
-      z-index: 200;
-      overflow-y: scroll;
-      border-top-left-radius: 15px;
-      border-bottom-left-radius: 15px;
-    }
-
-    .category-panel.active {
-      right: 0;
-    }
-
-    .wallpaper-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .wallpaper {
-      background-color: #999;
-      aspect-ratio: 9 / 20;
-      border-radius: 10px;
-      overflow: hidden;
-      position: relative;
-      background-size: cover;
-      background-position: center;
-      box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
-    }
-
-    .download-btn {
-      position: absolute;
-      bottom: 6px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: orange;
-      color: red;
-      padding: 6px 10px;
-      border: none;
-      border-radius: 8px;
-      font-weight: bold;
-      font-size: 13px;
-      cursor: pointer;
-    }
-
-    /* Tombol back ">" */
-    .back-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background-color: rgba(255,255,255,0.85);
-      color: #5a0080;
-      font-weight: bold;
-      font-size: 24px;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      z-index: 210;
-      box-shadow: 0 0 6px rgba(0,0,0,0.3);
-      transition: opacity 0.3s ease;
-    }
-
-    .back-btn.active {
-      display: flex;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Tombol kategori 1 -->
-  <div class="category-btn" onclick="openCategory()"></div>
-
-  <!-- Panel kategori 1 -->
-  <div class="category-panel" id="categoryPanel">
-    <div class="wallpaper-grid" id="wallpaperGrid">
-      <!-- Wallpaper akan dimasukkan lewat JS agar langsung 20 dan tidak error -->
-    </div>
-  </div>
-
-  <!-- Tombol kembali ">" -->
-  <div class="back-btn" id="backBtn" onclick="closeCategory()">&gt;</div>
-
-  <script>
-    const panel = document.getElementById("categoryPanel");
-    const backBtn = document.getElementById("backBtn");
-    const wallpaperGrid = document.getElementById("wallpaperGrid");
-
-    function openCategory() {
-      panel.classList.add("active");
-      backBtn.classList.add("active");
-    }
-
-    function closeCategory() {
-      panel.classList.remove("active");
-      backBtn.classList.remove("active");
-    }
-
-    function downloadWallpaper(index) {
-      alert("Mengunduh wallpaper " + index);
-    }
-
-// Tambahkan 20 wallpaper langsung ke grid
-function loadWallpapers() {
-  const urls = [
-  "https://i.imgur.com/g3A7Ys4.jpeg",
-  "https://i.imgur.com/w7szy3Y.jpeg",
-  "https://i.imgur.com/dpEv5kK.jpeg",
-  "https://i.imgur.com/NeVBdjB.jpeg",
-  "https://i.imgur.com/Ui4cXQ3.jpeg",
-  "https://d.uguu.se/wsTHyHKA.jpg"
-];
-
-// Menggunakan loop untuk memasukkan gambar sesuai URL yang berbeda
-for (let i = 0; i < urls.length; i++) {
-  const div = document.createElement("div");
-  div.className = "wallpaper";
-  div.style.backgroundImage = `url('${urls[i]}')`;  // Pastikan URL-nya sesuai indeks array
-
-  const btn = document.createElement("a");
-btn.className = "download-btn";
-btn.textContent = "Download";
-btn.href = urls[i]; // link langsung ke gambar
-btn.download = `elaina_wallpaper_${i + 1}.jpeg`; // nama file saat diunduh
-btn.target = "_blank"; // opsional: buka tab baru jika perlu
-
-div.appendChild(btn);
-  wallpaperGrid.appendChild(div);
-}
-}
-
-loadWallpapers();
-    
   </script>
 </body>
 </html>
@@ -660,3 +433,529 @@ loadWallpapers();
   </a>
 </body>
 </html>
+
+<!-- kategori elaina -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Journey of Elaina</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #2b2b64;
+      overflow: hidden;
+      
+    }
+
+    /* Tombol kategori 1 */
+    .category-btn {
+      position: fixed;
+      top: 160px;
+      left: 38px;
+      width: 160px;
+      height: 120px;
+      background-image: url('https://h.uguu.se/tpsOYOJi.png');
+      background-size: cover;
+      background-position: center;
+      border: 3px solid black;
+      border-radius: 12px;
+      box-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+      cursor: pointer;
+      z-index: 100;
+
+    }
+
+    /* Panel kategori 1 */
+    .category-panel {
+      position: fixed;
+      top: 120px !important; /* Supaya gak kena logo */
+      right: -100%;
+      width: 80%;
+      height: calc(100% - 100px);
+      background: linear-gradient(to left, #a080f3, #ffffff);
+      border-left: 3px solid black;
+      transition: right 0.4s ease;
+      padding: 20px;
+      box-sizing: border-box;
+      z-index: 200;
+      overflow-y: scroll;
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+    }
+
+    .category-panel.active {
+      right: 0;
+    }
+
+    .wallpaper-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .wallpaper {
+      background-color: #999;
+      aspect-ratio: 9 / 20;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    }
+
+    .download-btn {
+      position: absolute;
+      bottom: 6px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: orange;
+      color: red;
+      padding: 6px 10px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    /* Tombol back ">" */
+    .back-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: rgba(255,255,255,0.85);
+      color: #5a0080;
+      font-weight: bold;
+      font-size: 24px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 210;
+      box-shadow: 0 0 6px rgba(0,0,0,0.3);
+      transition: opacity 0.3s ease;
+    }
+
+    .back-btn.active {
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Tombol kategori 1 -->
+  <div class="category-btn" onclick="openCategory()"></div>
+
+  <!-- Panel kategori 1 -->
+  <div class="category-panel" id="categoryPanel">
+    <div class="wallpaper-grid" id="wallpaperGrid">
+      <!-- Wallpaper akan dimasukkan lewat JS agar langsung 20 dan tidak error -->
+    </div>
+  </div>
+
+  <!-- Tombol kembali ">" -->
+  <div class="back-btn" id="backBtn" onclick="closeCategory()">&gt;</div>
+
+  <script>
+    const panel = document.getElementById("categoryPanel");
+    const backBtn = document.getElementById("backBtn");
+    const wallpaperGrid = document.getElementById("wallpaperGrid");
+
+    function openCategory() {
+      panel.classList.add("active");
+      backBtn.classList.add("active");
+    }
+
+    function closeCategory() {
+      panel.classList.remove("active");
+      backBtn.classList.remove("active");
+    }
+
+    function downloadWallpaper(index) {
+      alert("Mengunduh wallpaper " + index);
+    }
+
+// Tambahkan 20 wallpaper langsung ke grid
+function loadWallpapers() {
+  const urls = [
+  "https://i.imgur.com/g3A7Ys4.jpeg",
+  "https://i.imgur.com/w7szy3Y.jpeg",
+  "https://i.imgur.com/dpEv5kK.jpeg",
+  "https://i.imgur.com/NeVBdjB.jpeg",
+  "https://i.imgur.com/Ui4cXQ3.jpeg",
+  "https://d.uguu.se/wsTHyHKA.jpg"
+];
+
+// Menggunakan loop untuk memasukkan gambar sesuai URL yang berbeda
+for (let i = 0; i < urls.length; i++) {
+  const div = document.createElement("div");
+  div.className = "wallpaper";
+  div.style.backgroundImage = `url('${urls[i]}')`;  // Pastikan URL-nya sesuai indeks array
+
+  const btn = document.createElement("a");
+btn.className = "download-btn";
+btn.textContent = "Download";
+btn.href = urls[i]; // link langsung ke gambar
+btn.download = `elaina_wallpaper_${i + 1}.jpeg`; // nama file saat diunduh
+btn.target = "_blank"; // opsional: buka tab baru jika perlu
+
+div.appendChild(btn);
+  wallpaperGrid.appendChild(div);
+}
+}
+
+loadWallpapers();
+    
+  </script>
+</body>
+</html>
+
+
+<!-- Tombol kategori 2 -->
+<div class="category2-btn" onclick="openCategory2()"></div>
+
+<!-- Panel kategori 2 -->
+<div class="category2-panel" id="category2Panel">
+  <div class="wallpaper-grid" id="wallpaperGrid2">
+    <!-- Wallpaper akan dimasukkan lewat JS -->
+  </div>
+</div>
+
+<!-- Tombol kembali ">" kategori 2 -->
+<div class="back-btn" id="backBtn2" onclick="closeCategory2()">&gt;</div>
+
+<style>
+  .category2-btn {
+    position: fixed;
+    top: 160px;
+    right: 38px;
+    width: 160px;
+    height: 120px;
+    background-image: url('https://n.uguu.se/SwREhXvQ.png');
+    background-size: cover;
+    background-position: center;
+    border: 3px solid black;
+    border-radius: 12px;
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+    cursor: pointer;
+    z-index: 100;
+  }
+
+  .category2-panel {
+    position: fixed;
+    top: 120px !important;
+    left: -100%;
+    width: 80%;
+    height: calc(100% - 100px);
+    background: linear-gradient(to right, #a080f3, #ffffff);
+    border-right: 3px solid black;
+    transition: left 0.4s ease;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 200;
+    overflow-y: scroll;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+
+  .category2-panel.active {
+    left: 0;
+  }
+</style>
+
+
+<!-- logo elaina  -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logo The Journey of Elaina</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0e0e2c;
+      height: 100vh;
+    }
+
+    .logo-container {
+      position: absolute;
+      top: 90px;
+      left: 30%;
+      transform: translateX(-50%);
+      animation: fadeInOut 8s ease-in-out infinite;
+    }
+
+    .logo-container img {
+      width: 250px;
+      max-width: 80%;
+      height: auto;
+    }
+
+    @keyframes fadeInOut {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="logo-container">
+    <img src="https://i.imgur.com/lMgdMoL.png" alt="The Journey of Elaina Logo">
+  </div>
+
+
+<!-- Logo Attack on Titan -->
+<div class="logo-aot">
+  <img src="https://f.uguu.se/yVksJoej.png" alt="Attack on Titan Logo">
+</div>
+
+<style>
+  .logo-aot {
+    position: fixed;
+    top: 23px;
+    right: 20%;
+    transform: translateX(50%);
+    animation: fadeInOut 8s ease-in-out infinite;
+    z-index: 1; /* pastikan di atas elemen biasa tapi tetap di bawah konten utama jika perlu */
+    pointer-events: none; /* agar tidak bisa diklik/diganggu */
+  }
+
+  .logo-aot img {
+    width: 250px;
+    max-width: 80%;
+    height: auto;
+  }
+
+  @keyframes fadeInOut {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+    
+  }
+</style>
+</body>
+</html>
+
+
+<!-- kategori 2 Attack on Titan -->
+<script>
+  const panel2 = document.getElementById("category2Panel");
+  const backBtn2 = document.getElementById("backBtn2");
+  const wallpaperGrid2 = document.getElementById("wallpaperGrid2");
+
+  function openCategory2() {
+    panel2.classList.add("active");
+    backBtn2.classList.add("active");
+  }
+
+  function closeCategory2() {
+    panel2.classList.remove("active");
+    backBtn2.classList.remove("active");
+  }
+
+  function loadWallpapers2() {
+    const urls2 = [
+      "https://via.placeholder.com/360x720?text=AOT+1",
+      "https://via.placeholder.com/360x720?text=AOT+2",
+      "https://via.placeholder.com/360x720?text=AOT+3",
+      "https://via.placeholder.com/360x720?text=AOT+4",
+      "https://via.placeholder.com/360x720?text=AOT+5",
+      "https://via.placeholder.com/360x720?text=AOT+6"
+    ];
+
+    for (let i = 0; i < urls2.length; i++) {
+      const div = document.createElement("div");
+      div.className = "wallpaper";
+      div.style.backgroundImage = `url('${urls2[i]}')`;
+
+      const btn = document.createElement("a");
+      btn.className = "download-btn";
+      btn.textContent = "Download";
+      btn.href = urls2[i];
+      btn.download = `aot_wallpaper_${i + 1}.jpeg`;
+      btn.target = "_blank";
+
+      div.appendChild(btn);
+      wallpaperGrid2.appendChild(div);
+    }
+  }
+
+  loadWallpapers2();
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Attack on Titan</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #2b2b64;
+      overflow: hidden;
+    }
+
+    /* Tombol kategori 2 */
+    .category2-btn {
+      position: fixed;
+      top: 160px;
+      right: 38px;
+      width: 160px;
+      height: 120px;
+      background-image: url('https://d.uguu.se/cjDJONrQ.jpg');
+      background-size: cover;
+      background-position: center;
+      border: 3px solid black;
+      border-radius: 12px;
+      box-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+      cursor: pointer;
+      z-index: 100;
+    }
+
+    /* Panel kategori 2 */
+    .category2-panel {
+      position: fixed;
+      top: 120px !important;
+      left: -100%;
+      width: 80%;
+      height: calc(100% - 100px);
+      background: linear-gradient(to right, #a080f3, #ffffff);
+      border-right: 3px solid black;
+      transition: left 0.4s ease;
+      padding: 20px;
+      box-sizing: border-box;
+      z-index: 200;
+      overflow-y: scroll;
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+    }
+
+    .category2-panel.active {
+      left: 0;
+    }
+
+    .wallpaper-grid2 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .wallpaper2 {
+      background-color: #ccc;
+      aspect-ratio: 9 / 20;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    }
+
+    .download-btn {
+      position: absolute;
+      bottom: 6px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: orange;
+      color: red;
+      padding: 6px 10px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    /* Tombol back kategori 2 */
+    .back-btn2 {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: rgba(255,255,255,0.85);
+      color: #5a0080;
+      font-weight: bold;
+      font-size: 24px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 210;
+      box-shadow: 0 0 6px rgba(0,0,0,0.3);
+      transition: opacity 0.3s ease;
+    }
+
+    .back-btn2.active {
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Tombol kategori 2 -->
+  <div class="category2-btn" onclick="openCategory2()"></div>
+
+  <!-- Panel kategori 2 -->
+  <div class="category2-panel" id="category2Panel">
+    <div class="wallpaper-grid2" id="wallpaperGrid2">
+      <!-- Wallpaper abu-abu -->
+    </div>
+  </div>
+
+  <!-- Tombol kembali kategori 2 -->
+  <div class="back-btn2" id="backBtn2" onclick="closeCategory2()">&lt;</div>
+
+  <script>
+    const panel2 = document.getElementById("category2Panel");
+    const backBtn2 = document.getElementById("backBtn2");
+    const wallpaperGrid2 = document.getElementById("wallpaperGrid2");
+
+    function openCategory2() {
+      panel2.classList.add("active");
+      backBtn2.classList.add("active");
+    }
+
+    function closeCategory2() {
+      panel2.classList.remove("active");
+      backBtn2.classList.remove("active");
+    }
+
+    function downloadWallpaper2(index) {
+      alert("Mengunduh wallpaper kategori 2 - " + index);
+    }
+
+    function loadWallpapers2() {
+      const dummyWallpapers = 20;
+      for (let i = 0; i < dummyWallpapers; i++) {
+        const div = document.createElement("div");
+        div.className = "wallpaper2";
+        div.style.backgroundImage = "url('https://via.placeholder.com/300x600/aaaaaa/000000?text=Coming+Soon')";
+
+        const btn = document.createElement("a");
+        btn.className = "download-btn";
+        btn.textContent = "Download";
+        btn.href = '#';
+        btn.onclick = () => downloadWallpaper2(i + 1);
+
+        div.appendChild(btn);
+        wallpaperGrid2.appendChild(div);
+      }
+    }
+
+    loadWallpapers2();
+  </script>
+</body>
+</html>
+
+
