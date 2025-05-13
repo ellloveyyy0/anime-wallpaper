@@ -538,16 +538,16 @@ loadWallpapers();
     z-index: 10; /* Di atas background, tapi tidak terlalu tinggi */
   }
   
-  .request-text {
+.request-text {
   position: fixed;
-  bottom: 15px; /* 20px di bawah teks utama */
+  bottom: 10px; /* Jarak dari bawah layar, atur sesuai keinginan */
   left: 50%;
   transform: translateX(-50%);
   font-family: 'Georgia', serif;
   color: white;
   text-shadow: 0 0 5px rgba(255,255,255,0.7);
-  font-size: 0.85rem;
-  z-index: 5;
+  font-size: 16px;
+  z-index: 9; /* Lebih rendah dari teks utama */
   pointer-events: none;
   user-select: none;
 }
