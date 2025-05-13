@@ -51,10 +51,10 @@
 
     .logo-container {
       position: absolute;
-      top: 20px;
+      top: 90px;
       left: 30%;
       transform: translateX(-50%);
-      animation: fadeInOut 4s ease-in-out infinite;
+      animation: fadeInOut 8s ease-in-out infinite;
     }
 
     .logo-container img {
@@ -275,7 +275,7 @@
     /* Tombol kategori 1 */
     .category-btn {
       position: fixed;
-      top: 90px;
+      top: 160px;
       left: 38px;
       width: 160px;
       height: 120px;
@@ -404,12 +404,13 @@
     }
 
 // Tambahkan 20 wallpaper langsung ke grid
-for (let i = 1; i <= 1; i++) {
+function loadWallpapers() {
   const urls = [
   "https://i.imgur.com/g3A7Ys4.jpeg",
   "https://i.imgur.com/w7szy3Y.jpeg",
   "https://i.imgur.com/dpEv5kK.jpeg",
-  "https://i.imgur.com/NeVBdjB.jpeg"
+  "https://i.imgur.com/NeVBdjB.jpeg",
+  "https://i.imgur.com/Ui4cXQ3.jpeg"
 ];
 
 // Menggunakan loop untuk memasukkan gambar sesuai URL yang berbeda
@@ -430,6 +431,7 @@ div.appendChild(btn);
 }
 }
 
+loadWallpapers();
     
   </script>
 </body>
@@ -516,6 +518,7 @@ div.appendChild(btn);
 <body>
   
   <div id="elaina-credit">﹄𝑪𝒊𝒓𝒄𝒍𝒆 𝑼𝒏𝒊𝒐𝒏 𝑬𝒍𝒂𝒊𝒏𝒂™</div>
+  <div class="request-text">request +62 877 1034 8394</div>
 
 <style>
   #elaina-credit {
@@ -534,6 +537,16 @@ div.appendChild(btn);
     user-select: none;
     z-index: 10; /* Di atas background, tapi tidak terlalu tinggi */
   }
+  
+  .request-text {
+  position: fixed;
+  top: 990px; /* sedikit di bawah teks utama */
+  left: 170px;
+  font-family: 'Georgia', serif;
+  color: white;
+  text-shadow: 0 0 5px rgba(255,255,255,0.7);
+  font-size: 16px;
+  z-index: 50; /* Lebih rendah dari kategori-panel (z-index: 200) */
 </style>
 
 <script>
