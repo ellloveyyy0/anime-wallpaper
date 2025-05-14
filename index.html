@@ -440,6 +440,35 @@
 
 <!----------------------------------------------------->
 
+<!-- Teks "tekan dan cek apa yg baru?" -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+<div style="
+  position: fixed;
+  bottom: 980px; /* ubah posisi di sini */
+  left: 160px;   /* ubah posisi di sini */
+  font-size: 10px; /* ubah ukuran di sini */
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: #fff;
+  text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000,
+     0 0 6px #fff,
+     0 0 10px #fff,
+     0 0 14px #a855f7,
+     0 0 20px #a855f7;
+  z-index: 1;
+  cursor: pointer;
+  user-select: none;
+" onclick="location.reload()">
+  tekan dan cek apa yg baru?
+</div>
+
+<!----------------------------------------------------->
+
 <!-- kategori elaina -->
 <!DOCTYPE html>
 <html lang="en">
@@ -497,10 +526,11 @@
       right: 0;
     }
 
-    .wallpaper-grid {
-      display: grid;
-      flex-direction: column;
-      gap: 20px;
+.wallpaper-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Ini yang bikin 3 kolom */
+  gap: 20px;
+}
     }
 
     .wallpaper {
@@ -873,5 +903,3 @@
 
 </body>
 </html>
-
-<!----------------------------------------------------->
