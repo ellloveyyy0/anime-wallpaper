@@ -211,6 +211,7 @@
 </body>
 </html>
 
+<!----------------------------------------------------->
 
 <!-- bintang -->
 <body>
@@ -287,6 +288,7 @@
   </script>
 </body>
 
+<!----------------------------------------------------->
 
 <!-- Credit -->
 <body>
@@ -400,6 +402,8 @@
   });
 </script>
 
+<!----------------------------------------------------->
+
 <!-- report -->
 <!DOCTYPE html>
 <html lang="id">
@@ -429,10 +433,12 @@
 
   <!-- Logo report bug -->
   <a href="https://wa.me/6287710348394" target="_blank" id="report-bug-link">
-    <img src="https://h.uguu.se/xqRgyehY.png" alt="Report Bug" id="report-bug-logo">
+    <img src="https://files.catbox.moe/ly1ty8.png" alt="Report Bug" id="report-bug-logo">
   </a>
 </body>
 </html>
+
+<!----------------------------------------------------->
 
 <!-- kategori elaina -->
 <!DOCTYPE html>
@@ -457,7 +463,7 @@
       left: 38px;
       width: 160px;
       height: 120px;
-      background-image: url('https://h.uguu.se/tpsOYOJi.png');
+      background-image: url('https://files.catbox.moe/t4cyna.png');
       background-size: cover;
       background-position: center;
       border: 3px solid black;
@@ -471,16 +477,16 @@
     /* Panel kategori 1 */
     .category-panel {
       position: fixed;
-      top: 120px !important; /* Supaya gak kena logo */
+      top: 0px !important; /* Supaya gak kena logo */
       right: -100%;
       width: 80%;
-      height: calc(100% - 100px);
+      height: 1000;
       background: linear-gradient(to left, #a080f3, #ffffff);
       border-left: 3px solid black;
       transition: right 0.4s ease;
       padding: 20px;
       box-sizing: border-box;
-      z-index: 200;
+      z-index: 999;
       overflow-y: scroll;
       border-top-left-radius: 15px;
       border-bottom-left-radius: 15px;
@@ -538,7 +544,7 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      z-index: 210;
+      z-index: 1000;
       box-shadow: 0 0 6px rgba(0,0,0,0.3);
       transition: opacity 0.3s ease;
     }
@@ -590,7 +596,7 @@ function loadWallpapers() {
   "https://i.imgur.com/dpEv5kK.jpeg",
   "https://i.imgur.com/NeVBdjB.jpeg",
   "https://i.imgur.com/Ui4cXQ3.jpeg",
-  "https://d.uguu.se/wsTHyHKA.jpg"
+  "https://files.catbox.moe/hs1977.jpg"
 ];
 
 // Menggunakan loop untuk memasukkan gambar sesuai URL yang berbeda
@@ -618,60 +624,7 @@ loadWallpapers();
 </html>
 
 
-<!-- Tombol kategori 2 -->
-<div class="category2-btn" onclick="openCategory2()"></div>
-
-<!-- Panel kategori 2 -->
-<div class="category2-panel" id="category2Panel">
-  <div class="wallpaper-grid" id="wallpaperGrid2">
-    <!-- Wallpaper akan dimasukkan lewat JS -->
-  </div>
-</div>
-
-<!-- Tombol kembali ">" kategori 2 -->
-<div class="back-btn" id="backBtn2" onclick="closeCategory2()">&gt;</div>
-
-<style>
-  .category2-btn {
-    position: fixed;
-    top: 160px;
-    right: 38px;
-    width: 160px;
-    height: 120px;
-    background-image: url('https://n.uguu.se/SwREhXvQ.png');
-    background-size: cover;
-    background-position: center;
-    border: 3px solid black;
-    border-radius: 12px;
-    box-shadow: 3px 3px 6px rgba(0,0,0,0.5);
-    cursor: pointer;
-    z-index: 100;
-  }
-
-  .category2-panel {
-    position: fixed;
-    top: 120px !important;
-    left: -100%;
-    width: 80%;
-    height: calc(100% - 100px);
-    background: linear-gradient(to right, #a080f3, #ffffff);
-    border-right: 3px solid black;
-    transition: left 0.4s ease;
-    padding: 20px;
-    box-sizing: border-box;
-    z-index: 200;
-    overflow-y: scroll;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-  }
-
-  .category2-panel.active {
-    left: 0;
-  }
-</style>
-
-
-<!-- logo elaina  -->
+<!--Logo elaina-->
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -691,7 +644,7 @@ loadWallpapers();
       top: 90px;
       left: 30%;
       transform: translateX(-50%);
-      animation: fadeInOut 8s ease-in-out infinite;
+      animation: fadeInOut 4s ease-in-out infinite;
     }
 
     .logo-container img {
@@ -710,92 +663,18 @@ loadWallpapers();
   <div class="logo-container">
     <img src="https://i.imgur.com/lMgdMoL.png" alt="The Journey of Elaina Logo">
   </div>
-
-
-<!-- Logo Attack on Titan -->
-<div class="logo-aot">
-  <img src="https://f.uguu.se/yVksJoej.png" alt="Attack on Titan Logo">
-</div>
-
-<style>
-  .logo-aot {
-    position: fixed;
-    top: 23px;
-    right: 20%;
-    transform: translateX(50%);
-    animation: fadeInOut 8s ease-in-out infinite;
-    z-index: 1; /* pastikan di atas elemen biasa tapi tetap di bawah konten utama jika perlu */
-    pointer-events: none; /* agar tidak bisa diklik/diganggu */
-  }
-
-  .logo-aot img {
-    width: 250px;
-    max-width: 80%;
-    height: auto;
-  }
-
-  @keyframes fadeInOut {
-    0%, 100% { opacity: 0.4; }
-    50% { opacity: 1; }
-    
-  }
-</style>
 </body>
 </html>
 
+<!----------------------------------------------------->
 
-<!-- kategori 2 Attack on Titan -->
-<script>
-  const panel2 = document.getElementById("category2Panel");
-  const backBtn2 = document.getElementById("backBtn2");
-  const wallpaperGrid2 = document.getElementById("wallpaperGrid2");
-
-  function openCategory2() {
-    panel2.classList.add("active");
-    backBtn2.classList.add("active");
-  }
-
-  function closeCategory2() {
-    panel2.classList.remove("active");
-    backBtn2.classList.remove("active");
-  }
-
-  function loadWallpapers2() {
-    const urls2 = [
-      "https://via.placeholder.com/360x720?text=AOT+1",
-      "https://via.placeholder.com/360x720?text=AOT+2",
-      "https://via.placeholder.com/360x720?text=AOT+3",
-      "https://via.placeholder.com/360x720?text=AOT+4",
-      "https://via.placeholder.com/360x720?text=AOT+5",
-      "https://via.placeholder.com/360x720?text=AOT+6"
-    ];
-
-    for (let i = 0; i < urls2.length; i++) {
-      const div = document.createElement("div");
-      div.className = "wallpaper";
-      div.style.backgroundImage = `url('${urls2[i]}')`;
-
-      const btn = document.createElement("a");
-      btn.className = "download-btn";
-      btn.textContent = "Download";
-      btn.href = urls2[i];
-      btn.download = `aot_wallpaper_${i + 1}.jpeg`;
-      btn.target = "_blank";
-
-      div.appendChild(btn);
-      wallpaperGrid2.appendChild(div);
-    }
-  }
-
-  loadWallpapers2();
-</script>
-
+<!-- kategori attack on titan-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Attack on Titan</title>
+  <title>Attack on Titan Category</title>
   <style>
     body {
       margin: 0;
@@ -804,14 +683,13 @@ loadWallpapers();
       overflow: hidden;
     }
 
-    /* Tombol kategori 2 */
-    .category2-btn {
+    .category-btn-aot {
       position: fixed;
       top: 160px;
-      right: 38px;
+      left: 300px;
       width: 160px;
       height: 120px;
-      background-image: url('https://d.uguu.se/cjDJONrQ.jpg');
+      background-image: url('https://files.catbox.moe/gwh6w7.jpg');
       background-size: cover;
       background-position: center;
       border: 3px solid black;
@@ -821,36 +699,35 @@ loadWallpapers();
       z-index: 100;
     }
 
-    /* Panel kategori 2 */
-    .category2-panel {
+    .category-panel-aot {
       position: fixed;
-      top: 120px !important;
-      left: -100%;
+      top: 0px;
+      right: -100%;
       width: 80%;
-      height: calc(100% - 100px);
-      background: linear-gradient(to right, #a080f3, #ffffff);
-      border-right: 3px solid black;
-      transition: left 0.4s ease;
+      height: 100%;
+      background: linear-gradient(to left, #a080f3, #ffffff);
+      border-left: 3px solid black;
+      transition: right 0.4s ease;
       padding: 20px;
       box-sizing: border-box;
-      z-index: 200;
+      z-index: 999;
       overflow-y: scroll;
-      border-top-right-radius: 15px;
-      border-bottom-right-radius: 15px;
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
     }
 
-    .category2-panel.active {
-      left: 0;
+    .category-panel-aot.active {
+      right: 0;
     }
 
-    .wallpaper-grid2 {
+    .wallpaper-grid-aot {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
 
-    .wallpaper2 {
-      background-color: #ccc;
+    .wallpaper {
+      background-color: #999;
       aspect-ratio: 9 / 20;
       border-radius: 10px;
       overflow: hidden;
@@ -873,13 +750,13 @@ loadWallpapers();
       font-weight: bold;
       font-size: 13px;
       cursor: pointer;
+      z-index: 1001;
     }
 
-    /* Tombol back kategori 2 */
-    .back-btn2 {
+    .back-btn-aot {
       position: fixed;
       bottom: 20px;
-      left: 20px;
+      right: 20px;
       width: 50px;
       height: 50px;
       border-radius: 50%;
@@ -891,71 +768,119 @@ loadWallpapers();
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      z-index: 210;
+      z-index: 1000;
       box-shadow: 0 0 6px rgba(0,0,0,0.3);
       transition: opacity 0.3s ease;
     }
 
-    .back-btn2.active {
+    .back-btn-aot.active {
       display: flex;
     }
   </style>
 </head>
 <body>
 
-  <!-- Tombol kategori 2 -->
-  <div class="category2-btn" onclick="openCategory2()"></div>
+  <!-- Tombol kategori AOT -->
+  <div class="category-btn-aot" onclick="openCategoryAot()"></div>
 
-  <!-- Panel kategori 2 -->
-  <div class="category2-panel" id="category2Panel">
-    <div class="wallpaper-grid2" id="wallpaperGrid2">
-      <!-- Wallpaper abu-abu -->
+  <!-- Panel kategori AOT -->
+  <div class="category-panel-aot" id="categoryPanelAot">
+    <div class="wallpaper-grid-aot" id="wallpaperGridAot">
+      <!-- Kosong, tempat disiapkan untuk wallpaper AOT -->
     </div>
   </div>
 
-  <!-- Tombol kembali kategori 2 -->
-  <div class="back-btn2" id="backBtn2" onclick="closeCategory2()">&lt;</div>
+  <!-- Tombol kembali ">" untuk AOT -->
+  <div class="back-btn-aot" id="backBtnAot" onclick="closeCategoryAot()">&gt;</div>
 
   <script>
-    const panel2 = document.getElementById("category2Panel");
-    const backBtn2 = document.getElementById("backBtn2");
-    const wallpaperGrid2 = document.getElementById("wallpaperGrid2");
+    const panelAot = document.getElementById("categoryPanelAot");
+    const backBtnAot = document.getElementById("backBtnAot");
+    const wallpaperGridAot = document.getElementById("wallpaperGridAot");
 
-    function openCategory2() {
-      panel2.classList.add("active");
-      backBtn2.classList.add("active");
+    function openCategoryAot() {
+      panelAot.classList.add("active");
+      backBtnAot.classList.add("active");
     }
 
-    function closeCategory2() {
-      panel2.classList.remove("active");
-      backBtn2.classList.remove("active");
+    function closeCategoryAot() {
+      panelAot.classList.remove("active");
+      backBtnAot.classList.remove("active");
     }
 
-    function downloadWallpaper2(index) {
-      alert("Mengunduh wallpaper kategori 2 - " + index);
-    }
+    // Tempat untuk nambah wallpaper AOT di masa depan
+    function loadAotWallpapers() {
+      const urls = [
+        "https://files.catbox.moe/la13q3.png"
+        // Kosong dulu
+        // Contoh kalau mau nambah: 'https://example.com/aot1.jpg'
+      ];
 
-    function loadWallpapers2() {
-      const dummyWallpapers = 20;
-      for (let i = 0; i < dummyWallpapers; i++) {
+      for (let i = 0; i < urls.length; i++) {
         const div = document.createElement("div");
-        div.className = "wallpaper2";
-        div.style.backgroundImage = "url('https://via.placeholder.com/300x600/aaaaaa/000000?text=Coming+Soon')";
+        div.className = "wallpaper";
+        div.style.backgroundImage = `url('${urls[i]}')`;
 
         const btn = document.createElement("a");
         btn.className = "download-btn";
         btn.textContent = "Download";
-        btn.href = '#';
-        btn.onclick = () => downloadWallpaper2(i + 1);
+        btn.href = urls[i];
+        btn.download = `aot_wallpaper_${i + 1}.jpeg`;
+        btn.target = "_blank";
 
         div.appendChild(btn);
-        wallpaperGrid2.appendChild(div);
+        wallpaperGridAot.appendChild(div);
       }
     }
 
-    loadWallpapers2();
+    loadAotWallpapers();
   </script>
 </body>
 </html>
 
 
+<!--Logo attack on titan-->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Logo Attack on Titan</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0e0e2c;
+      height: 100vh;
+      position: relative;
+    }
+
+    .aot-logo {
+      position: absolute;
+      top: 30px; /* Ubah nilai ini untuk atur posisi vertikal */
+      left: 58%;  /* Ubah nilai ini untuk atur posisi horizontal */
+      animation: fadeInOut 4s ease-in-out infinite;
+    }
+
+    .aot-logo img {
+      width: 250px;
+      max-width: 90%;
+      height: auto;
+    }
+
+    @keyframes fadeInOut {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="aot-logo">
+    <img src="https://files.catbox.moe/d2lad5.png" alt="Logo Attack on Titan">
+  </div>
+
+</body>
+</html>
+
+<!----------------------------------------------------->
