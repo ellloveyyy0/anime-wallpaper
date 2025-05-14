@@ -469,6 +469,40 @@
 
 <!----------------------------------------------------->
 
+<!--musik i wanna feel like x ninix titanic--->
+<audio id="bgm" src="https://files.catbox.moe/o8ep81.mp3" autoplay loop></audio>
+<script>
+  const audio = document.getElementById("bgm");
+
+  // Set volume ke 95%
+  audio.volume = 0.95;
+
+  // Simpan waktu terakhir sebelum user keluar
+  window.addEventListener("beforeunload", function () {
+    localStorage.setItem("bgmTime", audio.currentTime);
+  });
+
+  // Cek dan lanjutkan dari waktu sebelumnya
+  window.addEventListener("DOMContentLoaded", function () {
+    const savedTime = localStorage.getItem("bgmTime");
+    if (savedTime) {
+      audio.currentTime = parseFloat(savedTime);
+    }
+
+    // Autoplay setelah interaksi (untuk mem-bypass blokir autoplay di sebagian browser)
+    const playAudio = () => {
+      audio.play().catch(() => {}); // Jika gagal, biarkan
+      document.removeEventListener("click", playAudio);
+      document.removeEventListener("touchstart", playAudio);
+    };
+
+    document.addEventListener("click", playAudio);
+    document.addEventListener("touchstart", playAudio);
+  });
+</script>
+
+<!----------------------------------------------------->
+
 <!-- kategori elaina -->
 <!DOCTYPE html>
 <html lang="en">
