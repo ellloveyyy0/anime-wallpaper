@@ -474,33 +474,41 @@
 
 <script>
   const audio = document.getElementById("bgMusic");
-  audio.volume = 0.95;
+  audio.volume = 0.50;
 
-  // Simpan waktu terakhir saat lagu diputar
+  // Lanjut dari posisi terakhir
   let lastTime = localStorage.getItem("elaina_music_time");
-  if (lastTime) {
-    audio.currentTime = parseFloat(lastTime);
-  }
+  if (lastTime) audio.currentTime = parseFloat(lastTime);
 
-  // Mainkan saat pengguna pertama kali klik di mana pun
+  // Play saat klik pertama kali
   const startMusic = () => {
     audio.play().catch(() => {});
     document.removeEventListener("click", startMusic);
   };
   document.addEventListener("click", startMusic);
 
-  // Simpan posisi lagu sebelum pengguna keluar
+  // Simpan posisi sebelum keluar
   window.addEventListener("beforeunload", () => {
     localStorage.setItem("elaina_music_time", audio.currentTime);
   });
 
-  // Pause jika pengguna keluar dari Chrome / tab tidak aktif
+  // Pause saat tab hilang dari layar
   document.addEventListener("visibilitychange", () => {
-    if (document.hidden) {
+    if (document.visibilityState === "hidden") {
       audio.pause();
     } else {
       audio.play().catch(() => {});
     }
+  });
+
+  // Untuk beberapa browser saat keluar dari halaman/tab
+  window.addEventListener("pagehide", () => {
+    audio.pause();
+  });
+
+  // Untuk resume saat kembali
+  window.addEventListener("pageshow", () => {
+    audio.play().catch(() => {});
   });
 </script>
 
