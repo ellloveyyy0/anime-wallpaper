@@ -470,34 +470,37 @@
 <!----------------------------------------------------->
 
 <!--musik i wanna feel like x ninix titanic--->
-<audio id="bgm" src="https://files.catbox.moe/o8ep81.mp3" autoplay loop></audio>
-<script>
-  const audio = document.getElementById("bgm");
+<audio id="bgMusic" src="https://files.catbox.moe/o8ep81.mp3" preload="auto" loop></audio>
 
-  // Set volume ke 95%
+<script>
+  const audio = document.getElementById("bgMusic");
   audio.volume = 0.95;
 
-  // Simpan waktu terakhir sebelum user keluar
-  window.addEventListener("beforeunload", function () {
-    localStorage.setItem("bgmTime", audio.currentTime);
+  // Simpan waktu terakhir saat lagu diputar
+  let lastTime = localStorage.getItem("elaina_music_time");
+  if (lastTime) {
+    audio.currentTime = parseFloat(lastTime);
+  }
+
+  // Mainkan saat pengguna pertama kali klik di mana pun
+  const startMusic = () => {
+    audio.play().catch(() => {});
+    document.removeEventListener("click", startMusic);
+  };
+  document.addEventListener("click", startMusic);
+
+  // Simpan posisi lagu sebelum pengguna keluar
+  window.addEventListener("beforeunload", () => {
+    localStorage.setItem("elaina_music_time", audio.currentTime);
   });
 
-  // Cek dan lanjutkan dari waktu sebelumnya
-  window.addEventListener("DOMContentLoaded", function () {
-    const savedTime = localStorage.getItem("bgmTime");
-    if (savedTime) {
-      audio.currentTime = parseFloat(savedTime);
+  // Pause jika pengguna keluar dari Chrome / tab tidak aktif
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      audio.pause();
+    } else {
+      audio.play().catch(() => {});
     }
-
-    // Autoplay setelah interaksi (untuk mem-bypass blokir autoplay di sebagian browser)
-    const playAudio = () => {
-      audio.play().catch(() => {}); // Jika gagal, biarkan
-      document.removeEventListener("click", playAudio);
-      document.removeEventListener("touchstart", playAudio);
-    };
-
-    document.addEventListener("click", playAudio);
-    document.addEventListener("touchstart", playAudio);
   });
 </script>
 
