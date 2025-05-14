@@ -449,15 +449,17 @@
   <title>The Journey of Elaina</title>
   <style>
     body {
-      
-      height: 100%;
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #2b2b64;
-      
+      overflow-x: auto;
     }
 
-    /* Tombol kategori 1 */
+    .container {
+      min-height: 100vh;
+      width: 100vw;
+    }
+
     .category-btn {
       position: fixed;
       top: 160px;
@@ -472,23 +474,21 @@
       box-shadow: 3px 3px 6px rgba(0,0,0,0.5);
       cursor: pointer;
       z-index: 100;
-
     }
 
-    /* Panel kategori 1 */
     .category-panel {
       position: fixed;
-      top: 0px !important; /* Supaya gak kena logo */
+      top: 0;
       right: -100%;
       width: 80%;
-      height: 1000;
+      height: 100vh;
       background: linear-gradient(to left, #a080f3, #ffffff);
       border-left: 3px solid black;
       transition: right 0.4s ease;
       padding: 20px;
       box-sizing: border-box;
       z-index: 999;
-      overflow-y: scroll;
+      overflow-y: auto;
       border-top-left-radius: 15px;
       border-bottom-left-radius: 15px;
     }
@@ -527,9 +527,9 @@
       font-weight: bold;
       font-size: 13px;
       cursor: pointer;
+      text-decoration: none;
     }
 
-    /* Tombol back ">" */
     .back-btn {
       position: fixed;
       bottom: 20px;
@@ -553,25 +553,18 @@
     .back-btn.active {
       display: flex;
     }
-    
-    .container {
-  min-height: 100vh; /* Ini akan membuat seluruh area (termasuk sisi kanan) penuh secara vertikal */
-}
   </style>
 </head>
 <body>
 
-  <!-- Tombol kategori 1 -->
   <div class="category-btn" onclick="openCategory()"></div>
 
-  <!-- Panel kategori 1 -->
   <div class="category-panel" id="categoryPanel">
     <div class="wallpaper-grid" id="wallpaperGrid">
-      <!-- Wallpaper akan dimasukkan lewat JS agar langsung 20 dan tidak error -->
+      <!-- Wallpaper masuk dari JS -->
     </div>
   </div>
 
-  <!-- Tombol kembali ">" -->
   <div class="back-btn" id="backBtn" onclick="closeCategory()">&gt;</div>
 
   <script>
@@ -589,41 +582,34 @@
       backBtn.classList.remove("active");
     }
 
-    function downloadWallpaper(index) {
-      alert("Mengunduh wallpaper " + index);
+    function loadWallpapers() {
+      const urls = [
+        "https://i.imgur.com/g3A7Ys4.jpeg",
+        "https://i.imgur.com/w7szy3Y.jpeg",
+        "https://i.imgur.com/dpEv5kK.jpeg",
+        "https://i.imgur.com/NeVBdjB.jpeg",
+        "https://i.imgur.com/Ui4cXQ3.jpeg",
+        "https://files.catbox.moe/hs1977.jpg"
+      ];
+
+      for (let i = 0; i < urls.length; i++) {
+        const div = document.createElement("div");
+        div.className = "wallpaper";
+        div.style.backgroundImage = `url('${urls[i]}')`;
+
+        const btn = document.createElement("a");
+        btn.className = "download-btn";
+        btn.textContent = "Download";
+        btn.href = urls[i];
+        btn.download = `elaina_wallpaper_${i + 1}.jpeg`;
+        btn.target = "_blank";
+
+        div.appendChild(btn);
+        wallpaperGrid.appendChild(div);
+      }
     }
 
-// Tambahkan 20 wallpaper langsung ke grid
-function loadWallpapers() {
-  const urls = [
-  "https://i.imgur.com/g3A7Ys4.jpeg",
-  "https://i.imgur.com/w7szy3Y.jpeg",
-  "https://i.imgur.com/dpEv5kK.jpeg",
-  "https://i.imgur.com/NeVBdjB.jpeg",
-  "https://i.imgur.com/Ui4cXQ3.jpeg",
-  "https://files.catbox.moe/hs1977.jpg"
-];
-
-// Menggunakan loop untuk memasukkan gambar sesuai URL yang berbeda
-for (let i = 0; i < urls.length; i++) {
-  const div = document.createElement("div");
-  div.className = "wallpaper";
-  div.style.backgroundImage = `url('${urls[i]}')`;  // Pastikan URL-nya sesuai indeks array
-
-  const btn = document.createElement("a");
-btn.className = "download-btn";
-btn.textContent = "Download";
-btn.href = urls[i]; // link langsung ke gambar
-btn.download = `elaina_wallpaper_${i + 1}.jpeg`; // nama file saat diunduh
-btn.target = "_blank"; // opsional: buka tab baru jika perlu
-
-div.appendChild(btn);
-  wallpaperGrid.appendChild(div);
-}
-}
-
-loadWallpapers();
-    
+    loadWallpapers();
   </script>
 </body>
 </html>
