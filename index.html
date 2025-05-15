@@ -514,6 +514,7 @@
 
 <!----------------------------------------------------->
 
+<!---animasi bintang---->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -830,7 +831,7 @@
       left: 300px;
       width: 160px;
       height: 120px;
-      background-image: url('https://files.catbox.moe/gwh6w7.jpg');
+      background-image: url('https://files.catbox.moe/diaa1n.png');
       background-size: cover;
       background-position: center;
       border: 3px solid black;
@@ -1215,3 +1216,87 @@
 
   loadAlyaWallpapers();
 </script>
+
+<!----------------------------------------------------->
+
+
+<!-- logo yosuga no sora-->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Logo Yosuga no Sora</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0e0e2c;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+      user-select: none;
+    }
+
+    .logo-yosuga {
+      position: absolute;
+      top: 280px;
+      left:61%; /* Ubah nilai ini untuk geser posisi horizontal */
+      animation: fadeInOut 4s ease-in-out infinite;
+      width: 250px;
+      max-width: 30%;
+      height: auto;
+      /* Tidak ada transform translate supaya posisi langsung sesuai left */
+      cursor: grab;
+      user-select: none;
+      z-index: 0;
+    }
+
+    @keyframes fadeInOut {
+      0%, 100% {
+        opacity: 0.4;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <img 
+    src="https://files.catbox.moe/ynmy4u.png" 
+    alt="Logo Yosuga no Sora" 
+    class="logo-yosuga" 
+    id="logoYosuga"
+  />
+
+  <script>
+    // Agar bisa geser posisi dengan drag mouse (opsional)
+    const logo = document.getElementById('logoYosuga');
+    let isDragging = false;
+    let offsetX;
+
+    logo.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      offsetX = e.clientX - logo.getBoundingClientRect().left;
+      logo.style.cursor = 'grabbing';
+    });
+
+    window.addEventListener('mouseup', () => {
+      isDragging = false;
+      logo.style.cursor = 'grab';
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      let newLeft = e.clientX - offsetX;
+      // Batas kiri dan kanan supaya gak keluar layar
+      const maxLeft = window.innerWidth - logo.offsetWidth;
+      if (newLeft < 0) newLeft = 0;
+      if (newLeft > maxLeft) newLeft = maxLeft;
+
+      logo.style.left = newLeft + 'px';
+    });
+  </script>
+</body>
+</html>
