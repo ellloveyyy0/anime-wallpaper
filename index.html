@@ -2009,3 +2009,218 @@
 
 <!----------------------------------------------------->
 
+
+<!--girlz und panzer-->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logo Girlz und Panzer</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0e0e2c;
+      height: 100vh;
+    }
+
+    .girlz-container {
+      position: absolute;
+      top: 520px; /* Ubah sesuai keinginan */
+      left: 300px; /* Ubah sesuai keinginan */
+      animation: fadeInOut 4s ease-in-out infinite;
+      z-index: 10;
+    }
+
+    .girlz-container img {
+      width: 170px;  /* Tetap konsisten ukurannya */
+      height: auto;
+      display: block;
+    }
+
+    @keyframes fadeInOut {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="girlz-container">
+    <img src="https://files.catbox.moe/seukjx.png" alt="Girlz und Panzer Logo">
+  </div>
+</body>
+</html>
+
+
+<!-- kategori girlz und panzer -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Girlz und Panzer Category</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #2b2b64;
+      overflow: hidden;
+    }
+
+    .category-btn-guP {
+      position: fixed;
+      top: 610px;
+      left: 300px; /* bisa dipindah tanpa memengaruhi elemen lain */
+      width: 160px;
+      height: 120px;
+      background-image: url('https://files.catbox.moe/k864jj.png');
+      background-size: cover;
+      background-position: center;
+      border: 3px solid black;
+      border-radius: 12px;
+      box-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+      cursor: pointer;
+      z-index: 100;
+    }
+
+    .category-panel-guP {
+      position: fixed;
+      top: 0px;
+      right: -100%;
+      width: 80%;
+      height: 100%;
+      background: linear-gradient(to left, #a080f3, #ffffff);
+      border-left: 3px solid black;
+      transition: right 0.4s ease;
+      padding: 20px;
+      box-sizing: border-box;
+      z-index: 999;
+      overflow-y: scroll;
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+    }
+
+    .category-panel-guP.active {
+      right: 0;
+    }
+
+    .wallpaper-grid-guP {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .wallpaper {
+      background-color: #999;
+      aspect-ratio: 9 / 20;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    }
+
+    .download-btn {
+      position: absolute;
+      bottom: 6px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: orange;
+      color: red;
+      padding: 6px 10px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 13px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .back-btn-guP {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: rgba(255,255,255,0.85);
+      color: #5a0080;
+      font-weight: bold;
+      font-size: 24px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 0 6px rgba(0,0,0,0.3);
+      transition: opacity 0.3s ease;
+    }
+
+    .back-btn-guP.active {
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Tombol kategori Girlz und Panzer -->
+  <div class="category-btn-guP" onclick="openCategoryGuP()"></div>
+
+  <!-- Panel kategori Girlz und Panzer -->
+  <div class="category-panel-guP" id="categoryPanelGuP">
+    <div class="wallpaper-grid-guP" id="wallpaperGridGuP">
+      <!-- Wallpaper akan ditambahkan melalui JavaScript -->
+    </div>
+  </div>
+
+  <!-- Tombol kembali ">" untuk Girlz und Panzer -->
+  <div class="back-btn-guP" id="backBtnGuP" onclick="closeCategoryGuP()">&gt;</div>
+
+  <script>
+    const panelGuP = document.getElementById("categoryPanelGuP");
+    const backBtnGuP = document.getElementById("backBtnGuP");
+    const wallpaperGridGuP = document.getElementById("wallpaperGridGuP");
+
+    function openCategoryGuP() {
+      panelGuP.classList.add("active");
+      backBtnGuP.classList.add("active");
+    }
+
+    function closeCategoryGuP() {
+      panelGuP.classList.remove("active");
+      backBtnGuP.classList.remove("active");
+    }
+
+    // Load wallpaper Girlz und Panzer
+    function loadGuPWallpapers() {
+      const urls = [
+        "https://files.catbox.moe/la13q3.png"
+        // Tambahkan URL lainnya di sini
+      ];
+
+      for (let i = 0; i < urls.length; i++) {
+        const div = document.createElement("div");
+        div.className = "wallpaper";
+        div.style.backgroundImage = `url('${urls[i]}')`;
+
+        const btn = document.createElement("a");
+        btn.className = "download-btn";
+        btn.textContent = "Download";
+        btn.href = urls[i];
+        btn.download = `girlz_wallpaper_${i + 1}.jpeg`;
+        btn.target = "_blank";
+
+        div.appendChild(btn);
+        wallpaperGridGuP.appendChild(div);
+      }
+    }
+
+    loadGuPWallpapers();
+  </script>
+</body>
+</html>
+
+
+<!----------------------------------------------------->
