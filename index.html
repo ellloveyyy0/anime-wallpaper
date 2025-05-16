@@ -761,6 +761,178 @@
 
 <!----------------------------------------------------->
 
+<!--icon wa-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>WA Group Button with Custom Image</title>
+<style>
+  body {
+    margin: 0;
+    background-color: #f0f0f0; /* contoh background */
+  }
+  .wa-button {
+    position: fixed; /* bebas ubah posisi tanpa pengaruh ke elemen lain */
+    bottom: 100px; /* contoh posisi bawah kanan */
+    right: 280px;
+    width: 40px;  /* bisa diubah */
+    height: 40px; /* bisa diubah */
+    cursor: pointer;
+    z-index: 300;
+    border: 1.5px solid black; /* stroke hitam tipis */
+    border-radius: 16px;
+    box-sizing: border-box;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .wa-button img {
+    max-width: 90%;
+    max-height: 90%;
+    display: block;
+    user-select: none;
+  }
+  .wa-button:hover {
+    filter: brightness(0.85);
+  }
+</style>
+</head>
+<body>
+
+<a href="https://chat.whatsapp.com/ECNouSBrD5mIEkDkBs50XV" target="_blank" rel="noopener noreferrer" class="wa-button" title="Join WhatsApp Group">
+  <img src="https://files.catbox.moe/4aptrm.png" alt="WhatsApp Icon" />
+</a>
+
+</body>
+</html>
+
+
+<!----------------------------------------------------->
+
+<!---icon tiktok--->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TikTok Icon Button</title>
+<style>
+  body {
+    margin: 0;
+    background-color: #f0f0f0; /* contoh background */
+  }
+  .tiktok-button {
+    position: fixed; /* bebas ubah posisi tanpa pengaruh ke elemen lain */
+    bottom: 100px; /* contoh posisi bawah kanan */
+    right: 180px; /* agak geser dari WA button biar gak numpuk */
+    width: 40px;  /* bisa diubah */
+    height: 40px; /* bisa diubah */
+    cursor: pointer;
+    z-index: 300;
+    border: 1.5px solid black; /* stroke hitam tipis */
+    border-radius: 16px;
+    box-sizing: border-box;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .tiktok-button img {
+    max-width: 90%;
+    max-height: 90%;
+    display: block;
+    user-select: none;
+  }
+  .tiktok-button:hover {
+    filter: brightness(0.85);
+  }
+</style>
+</head>
+<body>
+
+<a href="https://www.tiktok.com/@loveryyellx" target="_blank" rel="noopener noreferrer" class="tiktok-button" title="Visit TikTok @loveryyellx">
+  <img src="https://files.catbox.moe/1g6n9m.png" alt="TikTok Icon" />
+</a>
+
+</body>
+</html>
+
+
+<!----------------------------------------------------->
+
+
+<!---persegi panjang--->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    .frame-16by9 {
+      width: 150px; /* Ubah panjang di sini */
+      aspect-ratio: 45 / 16; /* Menjaga rasio */
+      border: 4px solid black; /* Stroke hitam sedikit tebal */
+      background-color: transparent; /* Tengah transparan */
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.5); /* Efek bersinar hitam */
+      box-sizing: border-box;
+      position: absolute; /* Bisa digeser sesuka hati */
+      top: 863px; /* Atur posisi */
+      left: 175px;
+      z-index: 1; /* Tidak mengganggu elemen lain */
+    }
+  </style>
+</head>
+<body>
+  <div class="frame-16by9"></div>
+</body>
+</html>
+
+
+<!----------------------------------------------------->
+
+
+<!--teks official-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Official Text</title>
+  <style>
+    .official-text {
+      position: fixed;
+      top: 830px;
+      left: 185px;
+      font-size: 32px;
+      font-weight: 900;
+      line-height: 1.2;
+      letter-spacing: 2px;
+      background: linear-gradient(90deg, #d500f9, #ff1744); /* Ungu dan merah cerah */
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow:
+        0 0 6px rgba(255, 255, 255, 0.8),  /* Cahaya putih lembut */
+        0 0 12px rgba(255, 255, 255, 0.5);
+      z-index: 300;
+      user-select: none;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="official-text">OFFICIAL</div>
+
+</body>
+</html>
+
+
+<!----------------------------------------------------->
+
 
 <!-- kategori elaina -->
 <!DOCTYPE html>
@@ -1421,7 +1593,6 @@
       height: auto;
       /* Tidak ada transform translate supaya posisi langsung sesuai left */
       cursor: grab;
-      user-select: none;
       z-index: 0;
     }
 
@@ -1643,3 +1814,226 @@
   </script>
 </body>
 </html>
+
+
+<!----------------------------------------------------->
+
+<!-- logo koi wa futago de warikirenai-->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logo Koi wa Futago</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0e0e2c;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .futago-logo {
+      position: absolute;
+      top: 550px; /* Ubah nilai ini untuk pindah posisi vertikal */
+      left: 30%;  /* Ubah nilai ini untuk pindah posisi horizontal */
+      transform: translateX(-50%);
+      animation: fadeInOut 4s ease-in-out infinite;
+    }
+
+    .futago-logo img {
+      width: 250px;
+      max-width: 80%;
+      height: auto;
+    }
+
+    @keyframes fadeInOut {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="futago-logo">
+    <img src="https://files.catbox.moe/mb991y.png" alt="Koi wa Futago Logo">
+  </div>
+</body>
+</html>
+
+
+<!----------------------------------------------------->
+
+<!--kategori Koi wa Futago de Warikirenai-->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kategori Koi wa Futago</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #2b2b64;
+      overflow: hidden;
+    }
+
+    .category-btn-futago {
+      position: fixed;
+      top: 610px; /* bisa diubah */
+      left: 40px; /* bisa diubah */
+      width: 160px;
+      height: 120px;
+      background-image: url('https://files.catbox.moe/bdekpn.png');
+      background-size: cover;
+      background-position: center;
+      border: 3px solid black;
+      border-radius: 12px;
+      box-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+      cursor: pointer;
+      z-index: 100;
+    }
+
+    .category-panel-futago {
+      position: fixed;
+      top: 0px;
+      right: -100%;
+      width: 80%;
+      height: 100%;
+      background: linear-gradient(to left, #a080f3, #ffffff);
+      border-left: 3px solid black;
+      transition: right 0.4s ease;
+      padding: 20px;
+      box-sizing: border-box;
+      z-index: 999;
+      overflow-y: scroll;
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+    }
+
+    .category-panel-futago.active {
+      right: 0;
+    }
+
+    .wallpaper-grid-futago {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .wallpaper {
+      background-color: #999;
+      aspect-ratio: 9 / 20;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    }
+
+    .download-btn {
+      position: absolute;
+      bottom: 6px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: orange;
+      color: red;
+      padding: 6px 10px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 13px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .back-btn-futago {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: rgba(255,255,255,0.85);
+      color: #5a0080;
+      font-weight: bold;
+      font-size: 24px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 0 6px rgba(0,0,0,0.3);
+      transition: opacity 0.3s ease;
+    }
+
+    .back-btn-futago.active {
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Tombol kategori Koi wa Futago -->
+  <div class="category-btn-futago" onclick="openCategoryFutago()"></div>
+
+  <!-- Panel kategori Koi wa Futago -->
+  <div class="category-panel-futago" id="categoryPanelFutago">
+    <div class="wallpaper-grid-futago" id="wallpaperGridFutago">
+      <!-- Wallpaper akan dimuat otomatis -->
+    </div>
+  </div>
+
+  <!-- Tombol kembali -->
+  <div class="back-btn-futago" id="backBtnFutago" onclick="closeCategoryFutago()">&gt;</div>
+
+  <script>
+    const panelFutago = document.getElementById("categoryPanelFutago");
+    const backBtnFutago = document.getElementById("backBtnFutago");
+    const wallpaperGridFutago = document.getElementById("wallpaperGridFutago");
+
+    function openCategoryFutago() {
+      panelFutago.classList.add("active");
+      backBtnFutago.classList.add("active");
+    }
+
+    function closeCategoryFutago() {
+      panelFutago.classList.remove("active");
+      backBtnFutago.classList.remove("active");
+    }
+
+    function loadFutagoWallpapers() {
+      const urls = [
+        "https://files.catbox.moe/la13q3.png"
+        // Tambahkan lebih banyak gambar di sini
+      ];
+
+      for (let i = 0; i < urls.length; i++) {
+        const div = document.createElement("div");
+        div.className = "wallpaper";
+        div.style.backgroundImage = `url('${urls[i]}')`;
+
+        const btn = document.createElement("a");
+        btn.className = "download-btn";
+        btn.textContent = "Download";
+        btn.href = urls[i];
+        btn.download = `futago_wallpaper_${i + 1}.jpeg`;
+        btn.target = "_blank";
+
+        div.appendChild(btn);
+        wallpaperGridFutago.appendChild(div);
+      }
+    }
+
+    loadFutagoWallpapers();
+  </script>
+
+</body>
+</html>
+
+
+
+<!----------------------------------------------------->
+
